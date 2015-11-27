@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>صفحه موردنظر پیدا نشد! | یکسطر! | Web/Graphic Design, CSS, Web standards, Logo design ...</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../css/style.css" rel="stylesheet" type="text/css" media="screen,projection" />
+        <style>
+        a
+            {
+                text-decoration: none;
+                color: red;
+            }
+        </style>
+    </head>
+    <body id="notfound" style="direction:rtl;background-color: #3e373c;">
+        <div style="width: 100%; margin:0 auto;text-align:center">
+            <img src="../static/images/404.jpg" style="float:left" />
+            <div style="color:white">
+                <h1 class="noshow">صفحه موردنظر یافت نشد!
+                    <br />
+                    در جریان باشید!</h1>
+                <div id="content">
+                    <p>دنبال چیزی میگردید؟ ظاهرا صفحه ای که به دنبالش هستید وجود ندارد! آخرین اخبار را در <a href="yeksatr.com">یکسطر</a> دنبال کنید تا در جریان باشید!</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- // content -->
+
+    </body>
+</html>

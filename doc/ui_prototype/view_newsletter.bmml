@@ -1,0 +1,80 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="902" measuredH="621" mockupW="888" mockupH="600">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="102" y="21" w="800" h="600" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>User%20Homepage%0Ahttp%3A//yeksatr.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::DataGrid" x="182" y="135" w="542" h="442" measuredW="338" measuredH="348" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>12303802</color>
+        <hasHeader>true</hasHeader>
+        <hLines>true</hLines>
+        <selectedIndex>1</selectedIndex>
+        <text>%20%u062A%u0627%u0631%u06CC%u062E%2C%20%u0639%u0646%u0648%u0627%u0646%20%u062E%u0628%u0631%2C%20%u0645%u0646%u0628%u0639%2C%20%u0633%u062A%u0627%u0631%u0647%0A1391%2C%20Giacomo%20Guilizzoni%20Founder%20%26%20CEO%2C%20fars%2C%20*%0A1391%2C%20Marco%20Botton%20Tuttofare%2C%20mehr%2C%20*%0A1391%2C%20Mariah%20Maclachlan%20Better%20Half%2C%20fars%2C%20%0A1391%2C%20Valerie%20Liberty%20Head%20Chef%2C%20mehr%2C%20%0A1391%2C%20Guido%20Jack%20Guilizzoni%2C%20fars%2C%20%0A1391%2C%20Valerie%20Liberty%20Head%20Chef%2C%20mehr%2C%20*%0A1391%2C%20Guido%20Jack%20Guilizzoni%2C%20fars%2C%20%0A1391%2C%20Valerie%20Liberty%20Head%20Chef%2C%20mehr%2C%0A1391%2C%20Guido%20Jack%20Guilizzoni%2C%20fars%2C%20%0A1391%2C%20Valerie%20Liberty%20Head%20Chef%2C%20mehr%2C%20*%0A1391%2C%20Guido%20Jack%20Guilizzoni%2C%20fars%2C%20%0A%7B20L%2C%20280R%2C%2025%7D</text>
+        <vLines>false</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Canvas" x="102" y="94" w="800" h="31" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="627" y="99" w="-1" h="-1" measuredW="21" measuredH="20" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0644%u0648%u06AF%u0648</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::TextInput" x="345" y="97" w="274" h="-1" measuredW="41" measuredH="23" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>right</align>
+        <text>%u062C%u0633%u062A%u062C%u0648</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Link" x="282" y="100" w="-1" h="-1" measuredW="26" measuredH="18" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>homepage%26bm%3Bhomepage.bmml%26bm%3Bhomepage.bmml%26bm%3Bhomepage.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22268%2C79%2C294%2C97%22%20href%3D%22homepage.bmml%22%20alt%3D%22homepage%22%20id%3D%226%22/%3E</map>
+        <text>%u062E%u0631%u0648%u062C</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="102" y="591" w="800" h="30" measuredW="225" measuredH="24" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u062F%u06A9%u0645%u0647%20%u0647%u0627%u06CC%20%u0639%u0645%u0648%u0645%u06CC%20%u067E%u0627%u06CC%u06CC%u0646%20%u0635%u0641%u062D%u0647%20+%20%u0645%u062A%u0646%20%u06A9%u067E%u06CC%20%u0631%u0627%u06CC%u062A</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="110" y="99" w="-1" h="-1" measuredW="90" measuredH="20" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u062A%u0627%u0631%u06CC%u062E%20%u0648%20%u0633%u0627%u0639%u062A%20%u062C%u0627%u0631%u06CC</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="606" y="154" w="200" h="230" measuredW="200" measuredH="258" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <borderStyle>none</borderStyle>
+        <color>13421772</color>
+        <hrefs>homepage%26bm%3Bhomepage.bmml%26bm%3Bhomepage.bmml%26bm%3Bhomepage.bmml%2Cstarred_news%26bm%3Bstarred_news.bmml%26bm%3Bstarred_news.bmml%26bm%3Bstarred_news.bmml%2Csearch%26bm%3Bsearch.bmml%26bm%3Bsearch.bmml%26bm%3Bsearch.bmml%2Cnewsletter%26bm%3Bnewsletter.bmml%26bm%3Bnewsletter.bmml%26bm%3Bnewsletter.bmml%2Cprofile%26bm%3Bprofile.bmml%26bm%3Bprofile.bmml%26bm%3Bprofile.bmml%2Cfeedback%26bm%3Bfeedback.bmml%26bm%3Bfeedback.bmml%26bm%3Bfeedback.bmml%2Chomepage%26bm%3Bhomepage.bmml%26bm%3Bhomepage.bmml%26bm%3Bhomepage.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22710%2C153%2C792%2C181%22%20href%3D%22homepage.bmml%22%20alt%3D%22homepage%22%20id%3D%2214%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22710%2C180%2C792%2C208%22%20href%3D%22starred_news.bmml%22%20alt%3D%22starred_news%22%20id%3D%2214%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22710%2C207%2C792%2C235%22%20href%3D%22search.bmml%22%20alt%3D%22search%22%20id%3D%2214%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22710%2C234%2C792%2C262%22%20href%3D%22newsletter.bmml%22%20alt%3D%22newsletter%22%20id%3D%2214%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22710%2C261%2C792%2C289%22%20href%3D%22profile.bmml%22%20alt%3D%22profile%22%20id%3D%2214%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22710%2C288%2C792%2C316%22%20href%3D%22feedback.bmml%22%20alt%3D%22feedback%22%20id%3D%2214%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22710%2C315%2C792%2C343%22%20href%3D%22homepage.bmml%22%20alt%3D%22homepage%22%20id%3D%2214%22/%3E</map>
+        <position>right</position>
+        <selectedIndex>-1</selectedIndex>
+        <text>%u0645%u0631%u0648%u0631%20%u0627%u062E%u0628%u0627%u0631%0A%u0627%u062E%u0628%u0627%u0631%20%u0633%u062A%u0627%u0631%u0647%20%u062F%u0627%u0631%0A%u062C%u0633%u062A%u062C%u0648%u06CC%20%u067E%u06CC%u0634%u0631%u0641%u062A%u0647%0A%u062E%u0628%u0631%u0646%u0627%u0645%u0647%20%u0647%u0627%0A%u062D%u0633%u0627%u0628%20%u06A9%u0627%u0631%u0628%u0631%u06CC%0A%u0627%u0631%u0633%u0627%u0644%20%u0646%u0638%u0631%u0627%u062A%0A%u062E%u0631%u0648%u062C</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Button" x="345" y="97" w="42" h="23" measuredW="42" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>search%26bm%3Bsearch.bmml%26bm%3Bsearch.bmml%26bm%3Bsearch.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22331%2C76%2C373%2C99%22%20href%3D%22search.bmml%22%20alt%3D%22search%22%20id%3D%2218%22/%3E</map>
+        <menuIcon>false</menuIcon>
+        <text>%u0628%u06AF%u0631%u062F</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Button" x="739" y="97" w="157" h="24" measuredW="140" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>true</menuIcon>
+        <text>%u062E%u0628%u0631%u0646%u0627%u0645%u0647%3A%20%u0627%u0642%u062A%u0635%u0627%u062F%u06CC%20%u0627%u06CC%u0631%u0627%u0646</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::StickyNote" x="14" y="184" w="153" h="123" measuredW="109" measuredH="123" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0645%u0648%u0642%u0639%20%u0645%u0634%u0627%u0647%u062F%u0647%20%u062E%u0628%u0631%u0646%u0627%u0645%u0647%20%u062A%u0628%20%u0647%u0627%u06CC%20%u0633%u0645%u062A%20%u0631%u0627%u0633%u062A%20%u062F%u0631%20%u062D%u0627%u0644%u062A%20%u0627%u0646%u062A%u062E%u0627%u0628%20%u0646%u0634%u062F%u0647%20%u0647%u0633%u062A%u0646%u062F%20%u062F%u06A9%u0645%u0647%20%u0628%u0627%u0644%u0627%20%u0628%u0627%u06CC%u062F%20%u0628%u0647%20%u0627%u0646%u062F%u0627%u0632%u0647%20%u06A9%u0627%u0641%u06CC%20%u0645%u062A%u0645%u0627%u06CC%u0632%20%u0628%u0627%u0634%u062F%20%u062A%u0627%20%u06A9%u0627%u0631%u0628%u0631%20%u0645%u062A%u0648%u062C%u0647%20%u0634%u0648%u062F%20%u0627%u0644%u0627%u0646%20%u062F%u0631%20%u0686%u0647%20%u0648%u0636%u0639%u06CC%u062A%u06CC%20%u0627%u0633%u062A</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

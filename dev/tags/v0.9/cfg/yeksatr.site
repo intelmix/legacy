@@ -1,0 +1,21 @@
+server {
+    server_name yeksatr.io;
+
+    location /static/  {
+        root /srv/main/yeksatr/yeksatr/;
+        expires modified 10d;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:////var/uwsgi/server.sock;
+        #proxy_pass http://app_server;
+    }
+
+    error_page 404 /404.html;
+
+    location  = /404.html {
+        root /srv/main/yeksatr/yeksatr/static/html;
+    }
+
+}

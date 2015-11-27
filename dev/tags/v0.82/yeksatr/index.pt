@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+    <meta charset="utf-8">
+    <title>ÛŒÚ©Ø³Ø·Ø± - Ø¯Ø± Ø¬Ø±ÛŒØ§Ù† Ø¨Ø§Ø´ÛŒØ¯</title>
+    <meta name="description"
+          content="ÛŒÚ©Ø³Ø·Ø±: Ø¯Ø± Ø¬Ø±ÛŒØ§Ù† Ø¨Ø§Ø´ÛŒØ¯! Ø¬Ø¯ÛŒØ¯ØªØ±ÛŒÙ† Ø§Ø®Ø¨Ø§Ø± Ø§Ø² Ø¯Ù‡Ù‡Ø§ ÙˆØ¨Ø³Ø§ÛŒØª Ø®Ø¨Ø±ÛŒ Ùˆ Ø®Ø¨Ø±Ú¯Ø²Ø§Ø±ÛŒ Ù‡Ø§ÛŒ Ø±Ø³Ù…ÛŒ Ø¯Ø± Ø§Ø®ØªÛŒØ§Ø± Ø´Ù…Ø§Ø³Øª. Ø¬Ø³ØªØ¬ÙˆØŒ Ø°Ø®ÛŒØ±Ù‡ØŒ Ù…Ø¯ÛŒØ±ÛŒØª Ùˆ Ø·Ø¨Ù‚Ù‡ Ø¨Ù†Ø¯ÛŒ Ø®Ø¨Ø±Ù‡Ø§ Ø¨ØµÙˆØ±Øª Ù‡ÙˆØ´Ù…Ù†Ø¯ ">
+    <meta name="keywords" content="Ø®Ø¨Ø±ØŒ ÛŒÚ©Ø³Ø·Ø±ØŒ Ú¯Ø²Ø§Ø±Ø´ØŒ Ø±ÙˆÛŒØ¯Ø§Ø¯Ù‡Ø§ØŒ Ø®Ø¨Ø±Ú¯Ø²Ø§Ø±ÛŒØŒ Ø±ÙˆØ²Ù†Ø§Ù…Ù‡ØŒ ÙˆÙ‚Ø§ÛŒØ¹">
+	<link rel="shortcut icon" href="static/images/favicon.ico" />
+
+
+    <link rel="stylesheet" href="static/jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="static/font/Roya.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!--[if IE]>
+		<link rel="stylesheet" href="static/css/ie-style.css" media="screen" type="text/css" />
+		<![endif]-->
+
+    <script src="static/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+     <script src="static/jquery/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="static/js/utils.js" type="text/javascript"></script>
+    <script src="static/js/persianumber.min.js"></script>
+  </head>
+
+  <body>
+    <div id="topMenu">
+      <div class="linksRow">
+		
+        <a href="/" id="topLogo">
+          <img src="static/images/logo2.png" id="logoImage" />
+        </a>
+
+		<!--
+			<input type="submit" id='advSearchBtn' class="btn" value="Ø¬Ø³ØªØ¬ÙˆÛŒ Ù¾ÛŒØ´Ø±Ù�ØªÙ‡"></input>
+			-->
+		<input type="text" id="searchBox" placeholder="Ø¬Ø³ØªØ¬Ùˆ Ø¯Ø± ØªÙ…Ø§Ù…ÛŒ Ø®Ø¨Ø±Ù‡Ø§"></input>
+		<div id="advSearchToggler" title="Ù†Ù…Ø§ÛŒØ´ Ø§Ù…Ú©Ø§Ù†Ø§Øª Ù¾ÛŒØ´Ø±Ù�ØªÙ‡ Ø¯Ø± Ø²Ù…ÛŒÙ†Ù‡ Ø¬Ø³ØªØ¬ÙˆÛŒ Ø®Ø¨Ø±">
+		</div>
+		<button id="searchBtn" type="submit" title="Ø§Ù†Ø¬Ø§Ù… Ø¬Ø³ØªØ¬Ùˆ Ùˆ Ù†Ù…Ø§ÛŒØ´ Ù†ØªØ§ÛŒØ¬ Ø¯Ø± Ø¬Ø¯ÙˆÙ„ Ø®Ø¨Ø±Ù‡Ø§">
+		</button>
+
+		<button id="registerButton" class="btn" title="Ø«Ø¨Øª Ù†Ø§Ù… Ú©Ø§Ø±Ø¨Ø± Ø¬Ø¯ÛŒØ¯ ÛŒØ§ ÙˆØ±ÙˆØ¯ Ú©Ø§Ø±Ø¨Ø±Ø§Ù†ÛŒ Ú©Ù‡ Ù‚Ø¨Ù„Ø§ Ø«Ø¨Øª Ù†Ø§Ù… Ú©Ø±Ø¯Ù‡ Ø§Ù†Ø¯"
+				>ÙˆØ±ÙˆØ¯ / Ø«Ø¨Øª Ù†Ø§Ù…</button>
+		<button id="profileButton" title="Ù…Ø´Ø§Ù‡Ø¯Ù‡ Ù…Ù†ÙˆÛŒ Ú©Ø§Ø±Ø¨Ø±ÛŒ" class="btn">Ù…Ù‡Ø¯ÛŒ Ù…Ø­Ù…Ø¯ÛŒ</button>
+		<button id="feedbackButton" title="Ø§Ø±Ø³Ø§Ù„ Ù†Ø¸Ø±Ø§Øª Ùˆ Ù¾ÛŒØ´Ù†Ù‡Ø§Ø¯Ø§Øª" class="btn">Ø§Ø±ØªØ¨Ø§Ø· Ø¨Ø§ Ù…Ø§</button>
+		
+      </div>
+	  
+      <div id="infoRow">
+        <div class="col col2">&nbsp;</div>
+        <div class="col col4" id="infoCell">
+          <span class="ui-icon ui-icon-triangle-1-s colReverse"></span>
+		  121     Ø§Ù…Ú©Ø§Ù†Ø§Øª Ù…Ø±Ø¨ÙˆØ· Ø¨Ù‡ Ø¬Ø³ØªØ¬ÙˆÛŒ Ù¾ÛŒØ´Ø±Ù�ØªÙ‡
+        </div>
+        <div class="col col2">&nbsp;</div>
+      </div>
+    </div>
+
+<!--
+	<span class="currentDate persiaNumber"></span>
+    <br />
+    <span class="currentTime persiaNumber">
+      Ø³Ø§Ø¹Øª&nbsp;
+      <span id="cTime"></span>					
+    </span>
+	<br />
+
+
+	
+    <br /><br />
+	-->
+    <div id="alertDiv">
+      <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+        <p><span class="ui-icon ui-icon-info" style="float: right; margin-right: .3em;"></span>&nbsp;
+          <span id="textMsg">
+            Ù…ØªÙ† ØªØ³ØªÛŒ
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <ul id="profileMenu">
+      <li>
+        <span class="menuItem" id='profileMenuItem' >Ø­Ø³Ø§Ø¨ Ú©Ø§Ø±Ø¨Ø±ÛŒ</span>
+      <li>
+        <span class="menuItem" id="newsletterMenuItem">Ø®Ø¨Ø±Ù†Ø§Ù…Ù‡ Ù‡Ø§</span>
+      </li>
+      <li>
+        <span class="menuItem" id="signOutMenuItem">Ø®Ø±ÙˆØ¬</span>
+    </ul>
+    
+    <div id='advertisement' class="persiaNumber">
+      <b><span>Ø¨Ù‡ ÛŒÚ©Ø³Ø·Ø± Ø®ÙˆØ´ Ø¢Ù…Ø¯ÛŒØ¯!</span></b>
+      <p>
+        ÛŒÚ©Ø³Ø·Ø± ÛŒÚ© Ù¾Ø§ÛŒÚ¯Ø§Ù‡ Ø§Ø·Ù„Ø§Ø¹Ø§ØªÛŒ ØºÙ†ÛŒ Ùˆ Ù…ÙˆØªÙˆØ± Ø¬Ø³ØªØ¬ÙˆÛŒ Ù‡ÙˆØ´Ù…Ù†Ø¯ Ø§Ø®Ø¨Ø§Ø± Ø§Ø² Ø³Ø±ØªØ§Ø³Ø± Ø¯Ù†ÛŒØ§ÛŒ Ù…Ø¬Ø§Ø²ÛŒ Ø§Ø³Øª. Ø§ÛŒÙ† Ù…ÙˆØªÙˆØ± Ø¬Ø³ØªØ¬Ùˆ Ø¨ØµÙˆØ±Øª Ù…Ø¯Ø§ÙˆÙ… Ùˆ 24 Ø³Ø§Ø¹ØªÙ‡ Ø¢Ø®Ø±ÛŒÙ† ØªØºÛŒÛŒØ±Ø§Øª Ø®Ø¨Ø±Ú¯Ø²Ø§Ø±ÛŒÙ‡Ø§ Ùˆ Ø³Ø§ÛŒØªÙ‡Ø§ÛŒ Ø®Ø¨Ø±ÛŒ Ø±Ø§ Ù¾Ø±Ø¯Ø§Ø²Ø´ Ù†Ù…ÙˆØ¯Ù‡ Ùˆ Ø¨Ù‡ Ú©Ø§Ø±Ø¨Ø±Ø§Ù† Ø®ÙˆØ¯ Ø§Ù…Ú©Ø§Ù† Ø¬Ø³ØªØ¬Ùˆ Ùˆ Ú©Ø§ÙˆØ´ Ø¯Ø± Ø§ÛŒÙ† Ù…Ø¬Ù…ÙˆØ¹Ù‡ Ø±Ø§ Ù…ÛŒØ¯Ù‡Ø¯.
+        <br />
+        Ø§Ø®Ø¨Ø§Ø±ÛŒ Ú©Ù‡ ØªÙˆØ³Ø· ÛŒÚ©Ø³Ø·Ø± Ù¾ÙˆØ´Ø´ Ø¯Ø§Ø¯Ù‡ Ù…ÛŒØ´ÙˆÙ†Ø¯ Ø´Ø§Ù…Ù„ Ø§Ø®Ø¨Ø§Ø± Ø¹Ù…ÙˆÙ…ÛŒØŒ Ù�Ø±Ù‡Ù†Ú¯ÛŒØŒ Ø³ÛŒØ§Ø³ÛŒØŒ Ø§Ù‚ØªØµØ§Ø¯ÛŒØŒ ÙˆØ±Ø²Ø´ÛŒØŒ Ø¹Ù„Ù…ÛŒØŒ Ù¾Ø²Ø´Ú©ÛŒØŒ Ù�Ù† Ø¢ÙˆØ±ÛŒ Ùˆ Ø¯Ù‡Ù‡Ø§ Ù…ÙˆØ¶ÙˆØ¹ Ø¯ÛŒÚ¯Ø± Ø§Ø³Øª!
+        <br />
+        Ø¨Ø±Ø§ÛŒ Ø§Ø³ØªÙ�Ø§Ø¯Ù‡ Ø§Ø² ØªÙ…Ø§Ù…ÛŒ Ù‚Ø§Ø¨Ù„ÛŒØªÙ‡Ø§ÛŒ ÛŒÚ©Ø³Ø·Ø± Ø¨Ø§ÛŒØ³ØªÛŒ Ø¹Ø¶Ùˆ Ø´ÙˆÛŒØ¯. ØªÙ†Ù‡Ø§ Ø¨Ø§ Ú†Ù†Ø¯ Ú©Ù„ÛŒÚ© Ùˆ Ø¨ØµÙˆØ±Øª Ø±Ø§ÛŒÚ¯Ø§Ù† Ù…ÛŒØªÙˆØ§Ù†ÛŒØ¯ Ø¯Ø± Ø¹Ø±Ø¶ Ú©Ù…ØªØ± Ø§Ø² 20 Ø«Ø§Ù†ÛŒÙ‡ Ø§ÛŒÙ† Ú©Ø§Ø± Ø±Ø§ Ø§Ù†Ø¬Ø§Ù… Ø¯Ù‡ÛŒØ¯ Ù¾Ø³ Ù�Ø±ØµØª Ø±Ø§ Ø§Ø² Ø¯Ø³Øª Ù†Ø¯Ù‡ÛŒØ¯ Ùˆ Ù‡Ù…ÛŒÙ† Ø§Ù„Ø§Ù†
+		<br />
+		<div style="width:100%">
+          <a id="alternativeRegisterLink" href="#">Ø±Ø§ÛŒÚ¯Ø§Ù† Ø«Ø¨Øª Ù†Ø§Ù… Ú©Ù†ÛŒØ¯!</a>
+		  </div>
+      </p>
+    </div>
+    <div class="newsTable" >
+      <table id="mytable">
+        <thead><tr>
+            <th title="Ù…Ù†Ø¨Ø¹ Ø®Ø¨Ø±ÛŒ Ú©Ù‡ Ø§ÛŒÙ† Ø®Ø¨Ø± Ø±Ø§ Ù…Ù†ØªØ´Ø± Ù†Ù…ÙˆØ¯Ù‡ Ø§Ø³Øª" class="sourceColumn">Ù…Ù†Ø¨Ø¹</th>
+            <th class="starColumn">Ø³ØªØ§Ø±Ù‡</th>
+            <th class="titleColumn">Ø¹Ù†ÙˆØ§Ù† Ø®Ø¨Ø±</th>
+            <th title="Ù…Ø¯Øª Ø²Ù…Ø§Ù†ÛŒ Ú©Ù‡ Ø§Ø² Ø§Ù†ØªØ´Ø§Ø± Ø®Ø¨Ø± Ú¯Ø°Ø´ØªÙ‡ Ø§Ø³Øª" class="dateColumn">ØªØ§Ø±ÛŒØ® Ø§Ù†ØªØ´Ø§Ø±</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tal:block repeat="item news">
+            <tr>
+              <td width='40px' align='center' valign='center' >
+                <img style='border:0px;border-radius:2px;'   tal:attributes="alt item.icon_title"   
+                     tal:attributes="title item.icon_title"
+                     width='16px' height='16px'  tal:attributes="src item.icon"  />
+              </td>
+              <td></td>
+              <td>
+                <a style="color:black" target='_blank' tal:content="item.title" tal:attributes="href item.link" >
+                </a>
+              </td>
+
+              <td width='150px' class='persiaNumber' tal:content="item.publish_date" ></td>
+            </tr>
+
+          </tal:block>
+        </tbody>
+      </table>
+    </div>
+    <br /><br />
+
+    <div class="footer">
+      <br />
+      &nbsp;&nbsp;&nbsp;
+      <a class="footerLink" href="http://blog.yeksatr.com/">ÙˆØ¨Ù„Ø§Ú¯</a>&nbsp;|
+      <a class="footerLink" id="faq" href="#">Ø³ÙˆØ§Ù„Ø§Øª Ù…ØªØ¯Ø§ÙˆÙ„</a>&nbsp;|
+      <a class="footerLink" id="tos" href="#">Ø´Ø±Ø§ÛŒØ· Ø®Ø¯Ù…Ø§Øª</a>&nbsp;|
+      <a class="footerLink" id="pp" href="/static/doc/PrivacyPolicy.html">Ø­Ø±ÛŒÙ… Ø®ØµÙˆØµÛŒ</a>&nbsp;|
+      <a class="footerLink" id="about" href="/static/doc/AboutUs.html">Ø¯Ø±Ø¨Ø§Ø±Ù‡ Ù…Ø§</a>&nbsp;|
+      <a class="footerLink" id="contact" href="mailto:info@yeksatr.com?Subject=Contact Form">info@yeksatr.com</a>&nbsp;|
+      <span class="copyright persiaNumber">
+        ØªÙ…Ø§Ù…ÛŒ Ø­Ù‚ÙˆÙ‚ Ù…ØªØ¹Ù„Ù‚ Ø¨Ù‡ ÛŒÚ©Ø³Ø·Ø± Ù…ÛŒ Ø¨Ø§Ø´Ø¯ - 1393/2014
+        &nbsp<b>(Ù†Ø³Ø®Ù‡ 0.5)</b>
+        <a href="http://www.intelmix.com">Ø¹Ø¶Ùˆ Ú¯Ø±ÙˆÙ‡ Ù‡ÙˆØ´ ØªØ±Ú©ÛŒØ¨ÛŒ</a>
+      </span>
+    </div>
+
+    <!-- 
+		 <script src="///static.getclicky.com/js" type="text/javascript"></script>
+		 <script type="text/javascript">try{ clicky.init(100735887); }catch(e){}</script>
+		 -->
+
+	<script>
+	  $(document).ready(onAppLoad);
+	</script>
+
+	<!-- dialogs -->
+
+	<div id='registerDialog' title='ÙˆØ±ÙˆØ¯/Ø«Ø¨Øª Ù†Ø§Ù…' style='display:none'>
+	  <table style="table-layout:fixed;width:500px;">
+		<tr>
+		  <td class='dialogTitle'><span>Ø«Ø¨Øª Ù†Ø§Ù… Ú©Ø§Ø±Ø¨Ø± Ø¬Ø¯ÛŒØ¯</span></td>
+		  <td style="width: 50px;">&nbsp;</td>
+		  <td class='dialogTitle'><span>ÙˆØ±ÙˆØ¯ Ø¨Ù‡ Ø³ÛŒØ³ØªÙ…</span></td>
+		<tr>
+		  <td style='vertical-align:top;padding-top:10px'>
+			<label>Ù†Ø§Ù… Ú©Ø§Ø±Ø¨Ø±ÛŒ:</label>&nbsp;<br /><input type='text' id='txtUserReg' class='bigTextBox'></input>
+			<br /><br />
+			<label>Ú©Ù„Ù…Ù‡ Ø¹Ø¨ÙˆØ±:</label>&nbsp;<br /><input type='password' id='txtPassReg' class='bigTextBox'></input>
+			<br /><br />
+			<label>Ù¾Ø³Øª Ø§Ù„Ú©ØªØ±ÙˆÙ†ÛŒÚ©:</label>&nbsp;<br /><input type='text' id='txtEmailReg' class='bigTextBox'></input>
+			<br /><br />
+			<label>Ù„Ø·Ù�Ø§ Ù…ØªÙ† Ø²ÛŒØ± Ø±Ø§ ÙˆØ§Ø±Ø¯ Ú©Ù†ÛŒØ¯</label>&nbsp;<br />
+			<input type='hidden' id='captchaImg' value='200705041231yeksatr-80-160.jpgx'>
+			<img src='http://www.opencaptcha.com/img/200705041231yeksatr-80-160.jpgx' height='80' alt='captcha' width='160' border='0' /><br />
+			<input type=text id='captchaText' class="bigTextBox" value='' />
+			
+			<br /><br />
+		  </td>
+		  <td></td>
+		  <td style='vertical-align:top;padding-top:10px'>
+			<label>Ù†Ø§Ù… Ú©Ø§Ø±Ø¨Ø±ÛŒ:</label>&nbsp;<br /><input type='text' id='txtUser' class='bigTextBox'></input>
+			<br /><br />
+			<label>Ú©Ù„Ù…Ù‡ Ø¹Ø¨ÙˆØ±:</label>&nbsp;<br /><input type='password' id='txtPass' class='bigTextBox'></input>
+			<br /><br />
+			<a id='forgotPassword' href='#'>Ú©Ù„Ù…Ù‡ Ø¹Ø¨ÙˆØ±Ù… Ø±Ø§ Ù�Ø±Ø§Ù…ÙˆØ´ Ú©Ø±Ø¯Ù‡ Ø§Ù…</a>
+		  </td>
+		</tr>
+	  </table>
+	</div>
+	<div id='feedbackDialog' title='Ø§Ø±Ø³Ø§Ù„ Ù†Ø¸Ø±Ø§Øª Ùˆ Ù¾ÛŒØ´Ù†Ù‡Ø§Ø¯Ø§Øª'>
+	  <p>
+      <p>Ù„Ø·Ù�Ø§ Ù‡Ø± Ú¯ÙˆÙ†Ù‡ Ø§Ù†ØªÙ‚Ø§Ø¯ØŒ Ù¾ÛŒØ´Ù†Ù‡Ø§Ø¯ ÛŒØ§ Ù†Ø¸Ø±ÛŒ Ø¯Ø± Ù…ÙˆØ±Ø¯ ÛŒÚ©Ø³Ø·Ø± Ø¯Ø§Ø±ÛŒØ¯ ÙˆØ§Ø±Ø¯ Ù†Ù…ÙˆØ¯Ù‡ Ùˆ Ú©Ù„ÛŒØ¯ Ø§Ø±Ø³Ø§Ù„ Ø±Ø§ Ø¨Ø²Ù†ÛŒØ¯.</p>
+	  <textarea id='txtFeedback' rows='10' style="width:100%;margin:0 auto"></textarea>
+	  <br />
+	  </p>
+	</div>
+
+	<div id='tosDialog'></div>
+	<div id='ppDialog'></div>
+	<div id='faqDialog'></div>
+	<div id='aboutDialog'></div>
+
+	<!-- end of dialogs -->
+  </body>
+</html>

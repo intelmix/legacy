@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+    <meta charset="utf-8">
+    <title>یکسطر - در جریان باشید</title>
+    <meta name="description"
+          content="یکسطر: در جریان باشید! جدیدترین اخبار از دهها وبسایت خبری و خبرگزاری های رسمی در اختیار شماست. جستجو، ذخیره، مدیریت و طبقه بندی خبرها بصورت هوشمند ">
+    <meta name="keywords" content="خبر، یکسطر، گزارش، رویدادها، خبرگزاری، روزنامه، وقایع">
+	<link rel="shortcut icon" href="static/images/favicon.ico" />
+
+
+    <link rel="stylesheet" href="static/jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="static/font/Roya.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!--[if IE]>
+		<link rel="stylesheet" href="static/css/ie-style.css" media="screen" type="text/css" />
+		<![endif]-->
+
+    <script src="static/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+     <script src="static/jquery/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="static/js/utils.js" type="text/javascript"></script>
+    <script src="static/js/persianumber.min.js"></script>
+  </head>
+
+  <body>
+    <div id="topMenu">
+      <div class="linksRow">
+		
+        <a href="/" id="topLogo">
+          <img src="static/images/logo2.png" id="logoImage" />
+        </a>
+
+		<!--
+			<input type="submit" id='advSearchBtn' class="btn" value="جستجوی پیشرفته"></input>
+			-->
+		<input type="text" id="searchBox" placeholder="جستجو در تمامی خبرها"></input>
+		<div id="advSearchToggler" title="نمایش امکانات پیشرفته در زمینه جستجوی خبر">
+		</div>
+		<button id="searchBtn" type="submit" title="انجام جستجو و نمایش نتایج در جدول خبرها">
+		</button>
+
+		<button id="registerButton" class="btn" title="ثبت نام کاربر جدید یا ورود کاربرانی که قبلا ثبت نام کرده اند"
+				>ورود / ثبت نام</button>
+		<button id="profileButton" title="مشاهده منوی کاربری" class="btn">مهدی محمدی</button>
+		<button id="feedbackButton" title="ارسال نظرات و پیشنهادات" class="btn">ارتباط با ما</button>
+		
+      </div>
+	  
+      <div id="infoRow">
+        <div class="col col2">&nbsp;</div>
+        <div class="col col4" id="infoCell">
+          <span class="ui-icon ui-icon-triangle-1-s colReverse"></span>
+		  121     امکانات مربوط به جستجوی پیشرفته
+        </div>
+        <div class="col col2">&nbsp;</div>
+      </div>
+    </div>
+
+<!--
+	<span class="currentDate persiaNumber"></span>
+    <br />
+    <span class="currentTime persiaNumber">
+      ساعت&nbsp;
+      <span id="cTime"></span>					
+    </span>
+	<br />
+
+
+	
+    <br /><br />
+	-->
+    <div id="alertDiv">
+      <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+        <p><span class="ui-icon ui-icon-info" style="float: right; margin-right: .3em;"></span>&nbsp;
+          <span id="textMsg">
+            متن تستی
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <ul id="profileMenu">
+      <li>
+        <span class="menuItem" id='profileMenuItem' >حساب کاربری</span>
+      <li>
+        <span class="menuItem" id="newsletterMenuItem">خبرنامه ها</span>
+      </li>
+      <li>
+        <span class="menuItem" id="signOutMenuItem">خروج</span>
+    </ul>
+    
+    <div id='advertisement' class="persiaNumber">
+      <b><span>به یکسطر خوش آمدید!</span></b>
+      <p>
+        یکسطر یک پایگاه اطلاعاتی غنی و موتور جستجوی هوشمند اخبار از سرتاسر دنیای مجازی است. این موتور جستجو بصورت مداوم و 24 ساعته آخرین تغییرات خبرگزاریها و سایتهای خبری را پردازش نموده و به کاربران خود امکان جستجو و کاوش در این مجموعه را میدهد.
+        <br />
+        اخباری که توسط یکسطر پوشش داده میشوند شامل اخبار عمومی، فرهنگی، سیاسی، اقتصادی، ورزشی، علمی، پزشکی، فن آوری و دهها موضوع دیگر است!
+        <br />
+        برای استفاده از تمامی قابلیتهای یکسطر بایستی عضو شوید. تنها با چند کلیک و بصورت رایگان میتوانید در عرض کمتر از 20 ثانیه این کار را انجام دهید پس فرصت را از دست ندهید و همین الان
+		<br />
+		<div style="width:100%">
+          <a id="alternativeRegisterLink" href="#">رایگان ثبت نام کنید!</a>
+		  </div>
+      </p>
+    </div>
+    <div class="newsTable" >
+      <table id="mytable">
+        <thead><tr>
+            <th title="منبع خبری که این خبر را منتشر نموده است" class="sourceColumn">منبع</th>
+            <th class="starColumn">ستاره</th>
+            <th class="titleColumn">عنوان خبر</th>
+            <th title="مدت زمانی که از انتشار خبر گذشته است" class="dateColumn">تاریخ انتشار</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tal:block repeat="item news">
+            <tr>
+              <td width='40px' align='center' valign='center' >
+                <img style='border:0px;border-radius:2px;'   tal:attributes="alt item.icon_title"   
+                     tal:attributes="title item.icon_title"
+                     width='16px' height='16px'  tal:attributes="src item.icon"  />
+              </td>
+              <td></td>
+              <td>
+                <a style="color:black" target='_blank' tal:content="item.title" tal:attributes="href item.link" >
+                </a>
+              </td>
+
+              <td width='150px' class='persiaNumber' tal:content="item.publish_date" ></td>
+            </tr>
+
+          </tal:block>
+        </tbody>
+      </table>
+    </div>
+    <br /><br />
+
+    <div class="footer">
+      <br />
+      &nbsp;&nbsp;&nbsp;
+      <a class="footerLink" href="http://blog.yeksatr.com/">وبلاگ</a>&nbsp;|
+      <a class="footerLink" id="faq" href="#">سوالات متداول</a>&nbsp;|
+      <a class="footerLink" id="tos" href="#">شرایط خدمات</a>&nbsp;|
+      <a class="footerLink" id="pp" href="/static/doc/PrivacyPolicy.html">حریم خصوصی</a>&nbsp;|
+      <a class="footerLink" id="about" href="/static/doc/AboutUs.html">درباره ما</a>&nbsp;|
+      <a class="footerLink" id="contact" href="mailto:info@yeksatr.com?Subject=Contact Form">info@yeksatr.com</a>&nbsp;|
+      <span class="copyright persiaNumber">
+        تمامی حقوق متعلق به یکسطر می باشد - 1393/2014
+        &nbsp<b>(نسخه 0.5)</b>
+        <a href="http://www.intelmix.com">عضو گروه هوش ترکیبی</a>
+      </span>
+    </div>
+
+    <!-- 
+		 <script src="///static.getclicky.com/js" type="text/javascript"></script>
+		 <script type="text/javascript">try{ clicky.init(100735887); }catch(e){}</script>
+		 -->
+
+	<script>
+	  $(document).ready(onAppLoad);
+	</script>
+
+	<!-- dialogs -->
+
+	<div id='registerDialog' title='ورود/ثبت نام' style='display:none'>
+	  <table style="table-layout:fixed;width:500px;">
+		<tr>
+		  <td class='dialogTitle'><span>ثبت نام کاربر جدید</span></td>
+		  <td style="width: 50px;">&nbsp;</td>
+		  <td class='dialogTitle'><span>ورود به سیستم</span></td>
+		<tr>
+		  <td style='vertical-align:top;padding-top:10px'>
+			<label>نام کاربری:</label>&nbsp;<br /><input type='text' id='txtUserReg' class='bigTextBox'></input>
+			<br /><br />
+			<label>کلمه عبور:</label>&nbsp;<br /><input type='password' id='txtPassReg' class='bigTextBox'></input>
+			<br /><br />
+			<label>پست الکترونیک:</label>&nbsp;<br /><input type='text' id='txtEmailReg' class='bigTextBox'></input>
+			<br /><br />
+			<label>لطفا متن زیر را وارد کنید</label>&nbsp;<br />
+			<input type='hidden' id='captchaImg' value='200705041231yeksatr-80-160.jpgx'>
+			<img src='http://www.opencaptcha.com/img/200705041231yeksatr-80-160.jpgx' height='80' alt='captcha' width='160' border='0' /><br />
+			<input type=text id='captchaText' class="bigTextBox" value='' />
+			
+			<br /><br />
+		  </td>
+		  <td></td>
+		  <td style='vertical-align:top;padding-top:10px'>
+			<label>نام کاربری:</label>&nbsp;<br /><input type='text' id='txtUser' class='bigTextBox'></input>
+			<br /><br />
+			<label>کلمه عبور:</label>&nbsp;<br /><input type='password' id='txtPass' class='bigTextBox'></input>
+			<br /><br />
+			<a id='forgotPassword' href='#'>کلمه عبورم را فراموش کرده ام</a>
+		  </td>
+		</tr>
+	  </table>
+	</div>
+	<div id='feedbackDialog' title='ارسال نظرات و پیشنهادات'>
+	  <p>
+      <p>لطفا هر گونه انتقاد، پیشنهاد یا نظری در مورد یکسطر دارید وارد نموده و کلید ارسال را بزنید.</p>
+	  <textarea id='txtFeedback' rows='10' style="width:100%;margin:0 auto"></textarea>
+	  <br />
+	  </p>
+	</div>
+
+	<div id='tosDialog'></div>
+	<div id='ppDialog'></div>
+	<div id='faqDialog'></div>
+	<div id='aboutDialog'></div>
+
+	<!-- end of dialogs -->
+  </body>
+</html>

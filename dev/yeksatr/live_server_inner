@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /srv/main/app/live
+source bin/activate
+cd /srv/main/app/live/src/yeksatr
+nohup /usr/local/bin/uwsgi --ini-paste production.ini --chown-socket=www-data:www-data

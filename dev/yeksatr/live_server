@@ -1,0 +1,49 @@
+#!/bin/bash
+
+start() {
+        cd /srv/main/app/live
+        source bin/activate
+        nohup ./live_server_inner &> nohup.out&
+}
+
+stop() {
+        echo "stopping"
+        uwsgi --stop /srv/main/app/live/src/yeksatr/pid_5678.pid
+
+}
+
+update_news(){
+        echo "starting job";
+        cd /srv/main/app/live
+        source bin/activate
+        cd /srv/main/app/live/src/yeksatr/crawler/
+        python start.py production -update
+        echo "jobs done"
+}
+
+extract_news(){
+        cd /srv/main/app/live
+        source bin/activate
+        cd /srv/main/app/live/src/yeksatr/crawler/
+        python start.py production -extract
+        echo "done"
+}
+
+
+case $1 in
+	start)
+       start
+       ;;
+    stop)
+       stop
+       ;;
+    update_news)
+       update_news
+       ;;
+    extract_news)
+       extract_news
+       ;;
+     *)
+       echo "usage: rserve {start|stop}" ;;
+ esac
+ exit 0

@@ -1,0 +1,234 @@
+
+
+<table width='100%' class='normalRadius'>
+	<tr>
+		<td  align='left'>
+			<input type='hidden' value='-1' id='currentBulletinId' />
+			عبارت جستجو:
+		</td>	
+		<td colspan='3'>
+			<input type='text' id='bulletinQueryText'  style='width:90%' />
+		</td>
+	</tr>
+	<tr>
+		<td align='left'>
+			منبع:
+		</td>
+		<td>
+			<select id="bulletinSource" class='simpleBox' >
+          	<option value='-1' selected='selected' >تمام منابع</option>
+ 			<tal:block repeat="item sources">
+ 				<option value='${item.id}' style="background-image:url('${item.icon}')" >${item.title}</option>
+            </tal:block>
+ 		 </select>
+		</td>
+		<td colspan='2'></td>
+	</tr>		
+	<tr>
+		<td align='left'>
+			بازه زمانی:
+		</td>
+		<td>
+			<select id='bulletinScanPeriod' class='simpleBox' >
+	 		 	<option value='-1' >بدون محدودیت</option>
+	 		 	<option value='1' >یک روز گذشته</option>
+	 		 	<option value='7' >یک هفته گذشته</option>
+	 		 	<option value='30' >یک ماه گذشته</option>
+	 		 </select>
+		</td>
+		<td colspan='2'  align='left' >
+			<a  style='width:140px'  id='btnAddBulletin' >ذخیره خبرنامه</a>
+		</td>
+	</tr>
+	<tr>		
+		<td  align='left' colspan='1'>				
+			<label for='chkBulletinStarred' >							
+				فقط فیلتر موارد ستاره دار
+			</label>
+		</td>
+		<td>	
+				<input   type='checkbox' id='chkBulletinStarred'  ></input>
+
+		</td>
+		<td colspan='2' align='left' >
+			<a style='width:140px' id='btnClearBulletinForm' >پاک کردن</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td>
+			
+		</td>
+		<td>
+		</td>
+		<td>
+			
+		</td>
+	</tr>	
+</table>
+<br/>
+<span style='color:darkblue;font-size:14px;font-weight:bold;line-height:25px;'>خبرنامه های شما هر شب ساعت 21 به ایمیلتان ارسال خواهد شد</span>
+<br/>
+<div class='datagrid'>
+<table id='tblBulletin' >
+	<tr>
+		<th>ردیف</th>
+		<th>متن جستجو</th>
+		<th>بازه زمانی </th>
+		<th>منبع</th>
+		<th>ستاره دار</th>
+		<th>عملیات</th>
+	</tr>
+</table>
+</div>
+
+<script type='text/javascript' >
+
+
+function InitBulletin()
+{
+	$("#tblBulletin tr.bulletinRow").remove();
+	
+	$.ajax({
+		url:'/api/GetUserBulletin',
+		method:'POST'
+	}).done(function(data){
+		bts = data.data;
+		for (var i=0 ; i<bts.length ; i++)
+		{	
+			var row_class='bulletinRow';
+			/*if(i%2 == 0)
+				row_class += " alt";*/		
+			var source = bts[i].source;
+			if( source == null)
+				source = 'تمام منابع';
+			var scan_period = bts[i].scan_period;
+			if( scan_period == null)
+				scan_period = '-1';
+			 scan_period  = $("#bulletinScanPeriod option[value='"+scan_period+"']").text();
+			 var starred = bts[i].starred;
+			 if(starred == 0)
+			 	starred = 'خیر';
+			 else
+			 	starred = 'بلی';
+			str = "<tr class='"+row_class+"' ><td>"+bts[i].index+"</td><td>"+bts[i].query_text+"</td><td>"+scan_period+"</td><td>"+source+
+				"<td>"+starred+"</td></td><td width='90px'><a class='edit'  onclick='EditBulletin("+bts[i].id+",\""+bts[i].query_text+"\","+bts[i].source_id+","+bts[i].starred+","+bts[i].scan_period+")' >ویرایش </a><a class='remove' onclick='RemoveBulletin("+bts[i].id+")' >حذف</a>"+
+				"<a class='run' onclick='RunBulletin("+bts[i].id+",\""+bts[i].query_text+"\","+bts[i].source_id+","+bts[i].starred+","+bts[i].scan_period+")' >اجرا</a></td></tr>";
+			$('#tblBulletin tr:last').after(str);
+		}
+		
+		$('#tblBulletin a.edit ').button({text:false,icons: {
+            primary: "ui-icon-pencil"
+          }});
+		$('#tblBulletin a.remove').button({text:false,icons: {
+            primary: "ui-icon-closethick"
+          }});	
+        $('#tblBulletin a.run').button({text:false,icons: {
+            primary: "ui-icon-gear"
+          }});
+	});
+}
+
+function ShowFilter(id)
+{
+	$("<div id='bulletinFilterEditor'>").load('/api/GetBulletinFilterDialog',{bulletin_id:id}).dialog({
+		modal: true,
+        closeOnEscapeType: true,
+		dialogClass: 'loginRegisterDialog',
+		width: 600,
+		height:400,
+		close: function(event, ui)
+        {
+            $(this).dialog('destroy').remove();
+            InitBulletin(); 
+        }
+	});
+	
+}
+
+function RemoveBulletin(bulletin_id)
+{
+	$.ajax({
+		url:'/api/RemoveBulletin',
+		method:'POST',
+		data:{bulletin_id:bulletin_id }
+	}).done(function(data){
+		InitBulletin();
+	});	
+}
+
+function EditBulletin(bulletin_id,query_text,source,starred,scan_period)
+{
+	$('#bulletinQueryText').val(query_text);
+	
+	if(scan_period == null)
+		scan_period = -1;
+	$('#bulletinScanPeriod').val(scan_period);
+	if( source == null)
+		source = -1;
+	$('#bulletinSource').val(source);
+	var checked = false;
+	if(starred == 1)
+		checked = true;
+	$('#chkBulletinStarred').prop('checked',checked);
+	$('#currentBulletinId').val(bulletin_id);
+}
+
+function RunBulletin(bulletin_id,query_text,source,starred,scan_period)
+{
+	$('#searchBox').val(query_text);
+	
+	if(scan_period == null)
+		scan_period = -1;
+	$('#cbDate').val(scan_period);
+	if( source == null)
+		source = -1;
+	$('#cbSource').val(source);
+	var checked = false;
+	if(starred == 1)
+		checked = true;
+	$('#chkStarred').prop('checked',checked);
+	 showAdvancedSearchPanel();
+	 $('#searchBtn').click();
+}
+
+$('#btnAddBulletin').button({icons: {
+            primary: " ui-icon-plus"
+          }}).click(function(){
+				var query_text = $('#bulletinQueryText').val();
+				var scan_period = $('#bulletinScanPeriod').val();
+				var source = $('#bulletinSource').val();
+				var starred = $('#chkBulletinStarred').is(':checked');
+				var bulletin_id = $('#currentBulletinId').val();
+				$.ajax({
+					url :'/api/AddBulletin',
+					method:'POST',
+					data:{
+						bulletin_id:bulletin_id,
+						query_text:query_text,
+						scan_period:scan_period,
+						source:source,
+						starred:starred
+						}		
+				}).done(function(data){
+					console.log(data);
+					InitBulletin();
+				});
+			});
+			
+$('#btnClearBulletinForm').button({icons: {
+            primary: " ui-icon-plus"
+          }}).click(function(){
+				$('#bulletinQueryText').val('');
+				$('#bulletinScanPeriod').val(-1);
+				$('#bulletinSource').val(-1);
+				$('#chkBulletinStarred').prop('checked',false);
+				$('#currentBulletinId').val('-1');				
+			});
+			
+
+
+	InitBulletin();
+
+</script>

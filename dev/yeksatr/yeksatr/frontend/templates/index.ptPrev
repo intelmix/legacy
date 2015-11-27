@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+        <meta charset="utf-8">
+        <title>یکسطر - در جریان باشید</title>
+        <meta name="description"
+              content="یکسطر: در جریان باشید! جدیدترین اخبار از دهها وبسایت خبری و خبرگزاری های رسمی در اختیار شماست. جستجو، ذخیره، مدیریت و طبقه بندی خبرها بصورت هوشمند ">
+        <meta name="keywords" content="خبر، یکسطر، گزارش، رویدادها، خبرگزاری، روزنامه، وقایع">
+
+
+        <link rel="stylesheet" href="static/jquery/jquery-ui.min.css">
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="static/jquery/jquery.jui_dropdown.css">
+
+        <!--[if IE]>
+<link rel="stylesheet" href="static/css/ie-style.css" media="screen" type="text/css" />
+<![endif]-->
+
+        <script src="static/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="static/jquery/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="static/js/utils.js" type="text/javascript"></script>
+        <script src="static/js/persianumber.min.js"></script>
+        <script src="static/jquery/jquery.jui_dropdown.min.js"></script>
+    </head>
+
+    <body>
+        <div id="topMenu">
+            <div class="col col2 linksColumn">
+                <a id="registerLink" href="#">ورود / ثبت نام</a>
+                       
+                <div id="profileLink">
+                    <a href="#" id="profileButton">مهدی محمدی</a>
+                </div>
+            </div>
+
+            <div class="col col4">
+                <span class="inputWithButton">
+                    <input type="text" id="searchBox"><input id="searchBtn" type="submit" value="جستجو"></input>
+                <script>
+
+                </script>
+
+                </span>
+        </div>
+        <div class="col col2 logoColumn">
+            <a href="http://www.yeksatr.com">
+                <img src="static/images/logo2.png" style="margin-top:-2px" class="logoImage" />
+            </a>
+        </div>
+        <div id="infoRow">
+            <div class="col col2">&nbsp;</div>
+            <div class="col col4" id="infoCell">
+                <span class="ui-icon ui-icon-triangle-1-s colReverse"></span>
+                <span>جستجوی پیشرفته:&nbsp;</span>
+                <span>
+                    جستجو در تمام خبرها
+                </span>
+            </div>
+            <div class="col col2">&nbsp;</div>
+        </div>
+        </div>
+
+
+    <span class="currentDate persiaNumber"></span>
+    <br />
+    <span class="currentTime persiaNumber">
+        ساعت&nbsp;
+        <span id="cTime"></span>					
+    </span>
+
+    <br /><br />
+    <div id="alertDiv">
+        <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+            <p><span class="ui-icon ui-icon-info" style="float: right; margin-right: .3em;"></span>&nbsp;
+                <span id="textMsg">
+            متن تستی
+            </span>
+            </p>
+        </div>
+    </div>
+    
+    <ul id="profileMenu">
+      <li>
+          <span class="menuItem" >حساب کاربری</span>
+          <span class="ui-icon ui-icon-home"></span></li>
+      <li>
+        <span class="menuItem" >خبرنامه ها</span>
+          <span class="ui-icon ui-icon-comment"></span>
+        </li>
+      <li>
+          <span class="menuItem">خروج</span>
+          <span class="ui-icon ui-icon-power"></span></li>
+    </ul>
+    
+    <div id='advertisement' class="persiaNumber">
+        <b><span>به یکسطر خوش آمدید!</span></b>
+        <p>
+            یکسطر یک پایگاه اطلاعاتی غنی و موتور جستجوی هوشمند اخبار از سرتاسر دنیای مجازی است. این موتور جستجو بصورت مداوم و 24 ساعته آخرین تغییرات خبرگزاریها و سایتهای خبری را پردازش نموده و به کاربران خود امکان جستجو و کاوش در این مجموعه را میدهد.
+            <br />
+اخباری که توسط یکسطر پوشش داده میشوند شامل اخبار عمومی، فرهنگی، سیاسی، اقتصادی، ورزشی، علمی، پزشکی، فن آوری و دهها موضوع دیگر است!
+            <br />
+برای استفاده از تمامی قابلیتهای یکسطر بایستی عضو شوید. تنها با چند کلیک میتواند در عرض کمتر از 20 ثانیه این کار را انجام دهید پس فرصت را از دست ندهید و همین الان 
+            <a id="alternativeRegisterLink" href="#">ثبت نام کنید!</a>
+        </p>
+    </div>
+    <div class="newsTable" >
+        <table id="mytable">
+            <thead><tr>
+                <th class="sourceColumn">منبع</th>
+                <th class="starColumn">ستاره</th>
+                <th class="titleColumn">عنوان خبر</th>
+                <th class="dateColumn">تاریخ انتشار</th>
+                </tr>
+            </thead>
+            <tbody>
+<tal:block repeat="item news">
+  
+  
+  <tr>
+      	            <td width='40px' align='center' valign='center' >
+      	            	<img style='border:0px;border-radius:2px;'   tal:attributes="alt item.icon_title"   
+      	            	tal:attributes="title item.icon_title"
+      	            	 width='16px' height='16px'  tal:attributes="src item.icon"  />
+      	            </td>
+      	            <td></td>
+      	            <td>
+                        <a style="color:black" target='_blank' tal:content="item.title" tal:attributes="href item.link" >
+                        </a>
+                    </td>
+      		        
+      		        <td width='150px' class='persiaNumber' tal:content="item.publish_date" ></td>
+      	            </tr>
+  
+ </tal:block>
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div class="footer">
+        <br />
+        &nbsp;&nbsp;&nbsp;
+        <a class="footerLink" href="http://blog.yeksatr.com/">وبلاگ</a>&nbsp;|
+        <a class="footerLink" id="faq" href="/static/doc/FAQ.html">سوالات متداول</a>&nbsp;|
+        <a class="footerLink" id="tos" href="/static/doc/TermsOfService.htm">شرایط خدمات</a>&nbsp;|
+        <a class="footerLink" id="pp" href="/static/doc/PrivacyPolicy.html">حریم خصوصی</a>&nbsp;|
+        <a class="footerLink" id="about" href="/static/doc/AboutUs.html">درباره ما</a>&nbsp;|
+        <a class="footerLink" id="contact" href="mailto:info@yeksatr.com?Subject=Contact Form">ارتباط با ما</a>&nbsp;|
+        <span class="copyright persiaNumber">
+            تمامی حقوق متعلق به یکسطر می باشد - 1393/2014
+            &nbsp<b>(نسخه 0.4)</b>
+            <a href="http://www.intelmix.com">عضو گروه هوش ترکیبی</a>
+        </span>
+    </div>
+
+    <!-- 
+<script src="///static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100735887); }catch(e){}</script>
+-->
+
+    <div id="registerDialog" title="ورود/ثبت نام">
+        <p>
+            <form>
+                <input id="registerStartButton" type="button" value="میخواهم ثبت نام کنم"></input>
+                <br /><br />
+                <label>نام کاربری:</label>&nbsp;<br /><input type="text" id="txtUser" class="bigTextBox"></input>
+                <br /><br />
+                <label>کلمه عبور:</label>&nbsp;<br /><input type="password" id="txtPass" class="bigTextBox"></input>
+                <br /><br />
+                <div id="registerationFields">
+                    <label>پست الکترونیک:</label>&nbsp;<br /><input type="text" id="txtEmail" class="bigTextBox"></input>
+                    <br /><br />
+                </div>
+                <a id="forgotPassword" href="#">کلمه عبورم را فراموش کرده ام</a>
+            </form>
+        </p>
+    </div>
+
+    <div id="forgotPasswordDialog" title="بازنشانی کلمه عبور">
+        <p>
+            <form>
+                <p>لطفا نام کاربری خود را وارد نمایید تا در صورت صحیح بودن، راهنمایی های لازم برای آدرس پست الکترونیکی شما ارسال گردند.</p>
+                <br /><br />
+                <label>نام کاربری:</label>&nbsp;<br /><input type="text" id="txtUser" class="bigTextBox"></input>
+                <br /><br />
+            </form>
+        </p>
+    </div>
+    <script>
+        $(document).ready(function()
+                          {
+            $('#registerDialog').hide();
+            $('#forgotPasswordDialog').hide();
+            $('#profileMenu').hide();
+            
+            $('.persiaNumber').persiaNumber();
+            $('span.currentDate').html(getDatePersian()).persiaNumber();
+            $('#topMenu').css({position: 'fixed', top: '10'});
+
+            setupTimePanel();
+
+            $('#searchBtn').focus();
+            $('#infoCell > span').on("click", toggleAdvancedSearchPanel);
+            $('#registerLink').on("click", openRegistrationDialog);
+            $('#alternativeRegisterLink').on("click", function()
+            {
+                openRegistrationDialog();
+                registrationDialogChangetoRegister();
+            });
+            
+            $('#registerStartButton').on("click", registrationDialogChangetoRegister);
+            
+            $('#forgotPassword').on("click", openForgotPasswordDialog);
+            
+            var queryString = document.URL.toString();
+            //if server side has rendered this class then user is not logged in, so show
+            //advertisement message
+            /* $('body').hasClass('guest') ||  */
+            if ( queryString.indexOf('login') == -1)
+            {
+                $('#profileLink').hide();
+                $('#advertisement').fadeIn('slow');
+            }
+            else
+            {
+                $('#profileLink').show();
+                $('#registerLink').hide();
+            }
+            
+            $("#profileLink").jui_dropdown({
+                launcher_id: 'profileButton',
+                launcher_container_id: 'profileLink',
+                menu_id: 'profileMenu',
+                onSelect: function(event, data) {
+                  alert('index: ' + data.index + ' (id: ' + data.id + ')');
+                }
+              });
+            
+        });
+    </script>
+    </body>
+</html>

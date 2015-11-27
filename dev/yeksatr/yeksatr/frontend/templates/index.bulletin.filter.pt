@@ -1,0 +1,86 @@
+
+
+<table>
+	<tr>
+		<td>
+			<label>منبع:</label>
+          <select id="cbFilterSource" class='simpleBox'  >
+          	<option value='-1' selected='selected' >تمام منابع</option>
+ 			<tal:block repeat="item sources">
+ 				<option value='${item.id}' style="background-image:url('${item.icon}')" >${item.title}</option>
+            </tal:block>
+ 		 </select>
+		</td>
+		<td>
+			<label>عبارت:</label>
+            <input type='text' id='txtFilterTerm' ></input>
+		</td>
+		<td>
+			<a id='btnAddFilter' onclick="AddFilterBullletin()" >افزودن فیلتر</a>
+		</td>
+	</tr>
+</table>
+<br/>
+<div class="datagrid">
+<table id='tblBulletinFilter' >
+	<tr>
+		<th>ردیف</th>
+		<th>منبع</th>
+		<th>عبارت جستجو</th>
+		<th>حذف</th>
+	</tr>
+</table>
+</div>
+<script type='text/javascript' >
+$('#btnAddFilter').button({}).click(
+	function (e){
+			var source_id = $('#cbFilterSource').val();
+			var query_text = $('#txtFilterTerm').val();
+			$.ajax({
+				url:'/api/AddBulletinFilter',
+				data:{bulletin_id:${bulletin_id},source_id:source_id,query_text:query_text},
+				method:'POST'			
+			}).done(function(data){InitBulletinFilter();});
+				
+	});
+
+function InitBulletinFilter()
+{
+	$("#tblBulletinFilter tr.bulletinRow").remove();
+	
+	$.ajax({
+		url:'/api/GetBulletinFilter',
+		method:'POST',
+		data:{bulletin_id:${bulletin_id} }
+	}).done(function(data){
+		ft = data.data;
+		for (var i=0 ; i<ft.length ; i++)
+		{			
+			var row_class='bulletinRow';
+			if(i%2 == 0)
+				row_class += " alt";		
+			str = "<tr class='"+row_class+"'  ><td>"+ft[i].index+"</td><td>"+ft[i].source+"</td><td>"+ft[i].query_text+
+				"</td><td><a class='remove'  onclick='RemoveFilter("+ft[i].id+")' ></a></td></tr>";
+			$('#tblBulletinFilter tr:last').after(str);
+		}	
+		$('#tblBulletinFilter a.remove').button({text:false,icons: {
+            primary: "ui-icon-closethick"
+          }});	
+	});
+	
+}
+
+function RemoveFilter(filter_id)
+{ 
+	$.ajax({
+		url:'/api/RemoveBulletinFilter',
+		method:'POST',
+		data:{filter_id:filter_id }
+	}).done(function(data){
+		InitBulletinFilter();
+	});
+}
+
+InitBulletinFilter();
+
+</script>

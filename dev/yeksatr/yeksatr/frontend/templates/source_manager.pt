@@ -1,0 +1,88 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+      
+    
+<script type ='text/javascript'>
+	function SourceChanged()
+	{
+		document.getElementById('frmFeed').submit();
+	}
+</script>
+</head>
+<body>
+
+<table width='100%' cellspacing='0' >
+<tr>
+<td width='50%'>
+<form method='POST' action='/api/AddSource'>
+عنوان:
+<input type='text' id='txtSourceTitle' name='txtSourceTitle' />
+<br/>
+آدرس سایت:
+<input type='text' id='txtSourceUrl' name='txtSourceUrl' />
+<br/>
+آیکن:
+<input type='text' id='txtSourceIcon' name='txtSourceIcon' />
+<br/>
+<input type='submit' value='افزودن منبع' />
+</form>
+</td>
+<td style='border-right:1px solid black' >
+<form id='frmFeed' method='POST' action='/api/AddFeed' >
+		منبع:
+		<select id="cbFeedSource" name='cbFeedSource' class='simpleBox' onchange='SourceChanged()' >
+ 			<tal:block repeat="item sources">
+ 				<option value='${item.id}' style="background-image:url('${item.icon}')"    tal:attributes="selected item.selected" >${item.title}</option>
+            </tal:block>
+ 		 </select>
+ 		 <br/>
+ 		 عنوان:
+ 		 <input type='text' id='txtFeedTitle' name='txtFeedTitle' />
+ 		 <br/>
+ 		 آدرس فید:
+ 		 <input type='text' id='txtFeedUrl' name='txtFeedUrl' />
+ 		 <br/>
+ 		 <input type='submit' value='افزودن فید' />
+ 	</form>	 
+
+</td>
+
+</tr>  
+
+<tr>
+	<td valign='top'>
+	لیست کل منابع:
+	<div class='datagrid'>
+	<table>
+		<tal:block repeat="item sources">
+ 			<tr>
+ 				<td><img src="${item.icon}" /></td>
+ 				<td>${item.id}</td>
+ 				<td>${item.title}</td>
+ 			</tr>
+        </tal:block>
+     </table>
+</div>
+	</td>
+	<td valign='top' style='border-right:1px solid black' >
+	لیست فیدهای این منبع:
+	<div class='datagrid'>
+	<table>
+		<tal:block repeat="item feeds">
+ 			<tr>
+ 				<td>${item.index}</td>
+ 				<td>${item.url}</td>
+ 				<td>${item.title}</td>
+ 			</tr>
+        </tal:block>
+     </table>
+	</div>
+	
+	</td>
+</tr>
+</table>
+
+<br/>
+</body>
+</html>
